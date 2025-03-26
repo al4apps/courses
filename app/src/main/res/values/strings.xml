@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Courses</string>
+    <string name="onboarding_title">Тысячи курсов\nв одном месте</string>
+    <string name="onboarding_continue_butten_text">Продолжить</string>
+</resources>
