@@ -7,6 +7,7 @@
 
     <style name="Theme.Courses" parent="Base.Theme.Courses">
         <item name="android:colorPrimary">@color/dark</item>
+        <item name="colorOnPrimary">@color/green</item>
 
         <item name="android:colorBackground">@color/dark</item>
     </style>

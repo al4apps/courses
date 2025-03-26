@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -13,31 +14,44 @@
         android:text="@string/onboarding_title"
         android:textAlignment="center"
         android:textAppearance="@style/AndroidHeadline"
-        app:layout_constraintBottom_toTopOf="@+id/onbImageView"
+        app:layout_constraintBottom_toTopOf="@+id/imageContainer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/onbImageView"
+    <HorizontalScrollView
+        android:id="@+id/imageContainer"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/onboarding_image_height"
-        android:src="@drawable/courses"
-        android:scaleType="centerCrop"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:fillViewport="true"
+        android:contentDescription="@string/content_description_onboarding_courses_container"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/onbImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/onboarding_image_height"
+            android:src="@drawable/courses"
+            android:scaleType="centerCrop"
+            tools:ignore="VisualLintBounds" />
+
+    </HorizontalScrollView>
+
 
     <com.google.android.material.button.MaterialButton
-        style="@style/CoursesButtonStyle"
         android:id="@+id/continueButton"
+        style="@style/CoursesButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/margin_medium"
-        android:text="@string/onboarding_continue_butten_text"
         android:layout_marginBottom="@dimen/margin_large_32"
+        android:text="@string/onboarding_continue_button_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextContrastCheck,VisualLintButtonSize" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

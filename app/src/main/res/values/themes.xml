@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.Courses" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
@@ -6,8 +6,5 @@
     </style>
 
     <style name="Theme.Courses" parent="Base.Theme.Courses">
-        <item name="android:colorPrimary">@color/dark</item>
-
-        <item name="android:colorBackground">@color/dark</item>
     </style>
 </resources>

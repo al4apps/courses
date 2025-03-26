@@ -1,5 +1,19 @@
 <resources>
     <string name="app_name">Courses</string>
     <string name="onboarding_title">Тысячи курсов\nв одном месте</string>
-    <string name="onboarding_continue_butten_text">Продолжить</string>
+    <string name="onboarding_continue_button_text">Продолжить</string>
+    <string name="content_description_onboarding_courses_container">Названия курсов</string>
+
+    <!--    Вход -->
+    <string name="login_screen_title">Вход</string>
+    <string name="login_screen_email_text">Email</string>
+    <string name="login_screen_password_text">Пароль</string>
+    <string name="login_screen_sign_in_button_text">Вход</string>
+    <string name="login_screen_no_account_text">Нету аккаунта?</string>
+    <string name="login_screen_registration_text">Регистрация</string>
+    <string name="login_screen_forgot_password_text">Забыл пароль</string>
+    <string name="content_description_email_input_layout">Поле для ввода email</string>
+    <string name="content_description_password_input_layout">Поле для ввода пароля</string>
+    <string name="email_input_hint">example@gmail.com</string>
+    <string name="password_input_hint">Введите пароль</string>
 </resources>

@@ -7,9 +7,14 @@
     <dimen name="padding_large_32">32dp</dimen>
 
     <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_small_4">4dp</dimen>
     <dimen name="margin_medium">16dp</dimen>
     <dimen name="margin_large">24dp</dimen>
     <dimen name="margin_large_32">32dp</dimen>
+    <dimen name="margin_large_28">28dp</dimen>
 
     <dimen name="onboarding_image_height">316dp</dimen>
+    <dimen name="edit_text_radius">30dp</dimen>
+    <dimen name="divider_stroke_border">1dp</dimen>
+    <dimen name="edit_text_height">40dp</dimen>
 </resources>
