@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AndroidHeadline" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">28sp</item>
+        <item name="fontWeight">400</item>
+    </style>
+
+    <style name="CoursesButtonStyle" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@drawable/button_states</item>
+        <item name="rippleColor">@color/green_button_ripple</item>
+    </style>
+</resources>
