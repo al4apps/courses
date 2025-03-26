@@ -42,12 +42,13 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/emailEditText"
-                android:paddingVertical="0dp"
                 android:layout_width="match_parent"
-                android:inputType="textEmailAddress"
                 android:layout_height="@dimen/edit_text_height"
                 android:hint="@string/email_input_hint"
-                android:textAppearance="@style/AndroidBodyMedium" />
+                android:inputType="textEmailAddress"
+                android:paddingVertical="0dp"
+                android:textAppearance="@style/AndroidBodyMedium"
+                tools:ignore="TouchTargetSizeCheck,VisualLintTextFieldSize" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -71,10 +72,11 @@
                 android:id="@+id/passwordEditText"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/edit_text_height"
-                android:paddingVertical="0dp"
                 android:hint="@string/password_input_hint"
                 android:inputType="textPassword"
-                android:textAppearance="@style/AndroidBodyMedium" />
+                android:paddingVertical="0dp"
+                android:textAppearance="@style/AndroidBodyMedium"
+                tools:ignore="TouchTargetSizeCheck,VisualLintTextFieldSize" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
@@ -84,7 +86,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_large"
             android:text="@string/login_screen_sign_in_button_text"
-            tools:ignore="TextContrastCheck,VisualLintButtonSize" />
+            tools:ignore="TextContrastCheck,VisualLintButtonSize,DuplicateSpeakableTextCheck" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="wrap_content"
@@ -134,6 +136,7 @@
             android:layout_gravity="center_horizontal">
             
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/vkIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/vk"/>
@@ -143,6 +146,7 @@
                 android:layout_height="0dp"/>
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/okIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ok"/>
