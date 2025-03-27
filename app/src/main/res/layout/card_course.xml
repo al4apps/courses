@@ -33,7 +33,7 @@
                 app:strokeWidth="0dp">
 
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/mainImageView"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/course_card_image_height"
                     android:scaleType="centerCrop"
@@ -53,6 +53,7 @@
                 app:strokeWidth="0dp">
 
                 <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/markImageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -91,6 +92,7 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="@style/AndroidBodySmall12"
                         android:paddingEnd="@dimen/padding_small"
+                        android:textColor="@color/white"
                         android:paddingStart="0dp"
                         tools:text="4.9"/>
 
@@ -121,6 +123,7 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="@style/AndroidBodySmall12"
                         android:paddingHorizontal="@dimen/padding_small"
+                        android:textColor="@color/white"
                         tools:text="22 Мая 2024"/>
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -144,6 +147,8 @@
                 android:textAppearance="@style/AndroidBodySmall12"
                 android:layout_marginTop="@dimen/margin_medium_12"
                 android:layout_marginEnd="@dimen/margin_medium"
+                android:maxLines="2"
+                android:ellipsize="end"
                 app:layout_constraintStart_toStartOf="@id/courseTitleTextView"
                 app:layout_constraintTop_toBottomOf="@+id/courseTitleTextView"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -172,7 +177,7 @@
                     android:id="@+id/detailInfoTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="Подробнее"
+                    android:text="@string/course_card_to_detail_text"
                     android:textAlignment="center"
                     android:textAppearance="@style/AndroidButtonSmall"
                     android:textColor="@color/green" />
