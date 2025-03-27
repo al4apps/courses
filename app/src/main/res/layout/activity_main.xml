@@ -8,10 +8,12 @@
     tools:context=".MainActivity">
 
     <androidx.fragment.app.FragmentContainerView
-        android:name="com.al4apps.courses.presentation.CoursesFragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:id="@+id/fragmentContainerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/start_nav_graph"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

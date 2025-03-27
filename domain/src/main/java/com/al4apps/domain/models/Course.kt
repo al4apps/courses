@@ -1,4 +1,4 @@
-package com.al4apps.courses.domain
+package com.al4apps.domain.models
 
 data class Course(
     val id: Int,

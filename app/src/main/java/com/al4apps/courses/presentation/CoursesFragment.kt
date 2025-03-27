@@ -4,12 +4,12 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.al4apps.courses.databinding.FragmentCoursesBinding
-import com.al4apps.courses.domain.Course
 import com.al4apps.courses.presentation.adapter.CoursesAdapter
 import com.al4apps.courses.utils.AbstractFragment
 import com.al4apps.courses.utils.autoCleared
+import com.al4apps.domain.models.Course
 
-class CoursesFragment: AbstractFragment<FragmentCoursesBinding>(FragmentCoursesBinding::inflate) {
+class CoursesFragment : AbstractFragment<FragmentCoursesBinding>(FragmentCoursesBinding::inflate) {
 
     private var coursesAdapter: CoursesAdapter by autoCleared()
 
@@ -37,8 +37,7 @@ class CoursesFragment: AbstractFragment<FragmentCoursesBinding>(FragmentCoursesB
                 startDate = "2024-05-22",
                 hasLike = false,
                 publishDate = "2024-02-02"
-            ),
-            Course(
+            ), Course(
                 id = 101,
                 title = "3D-дженералист",
                 text = "Освой профессию 3D-дженералиста и стань универсальным специалистом, который умеет создавать 3D-модели, текстуры и анимации, а также",
@@ -47,8 +46,7 @@ class CoursesFragment: AbstractFragment<FragmentCoursesBinding>(FragmentCoursesB
                 startDate = "2024-09-10",
                 hasLike = false,
                 publishDate = "2024-01-20"
-            ),
-            Course(
+            ), Course(
                 id = 102,
                 title = "Python Advanced. Для продвинутых",
                 text = "Вы узнаете, как разрабатывать гибкие и высокопроизводительные серверные приложения на",
@@ -57,8 +55,7 @@ class CoursesFragment: AbstractFragment<FragmentCoursesBinding>(FragmentCoursesB
                 startDate = "2024-10-12",
                 hasLike = true,
                 publishDate = "2024-08-10"
-            ),
-            Course(
+            ), Course(
                 id = 103,
                 title = "Системный аналитик",
                 text = "Освоите навыки системной аналитики с нуля за 9 месяцев. Будет очень много практики на реальных проектах, чтобы вы могли сразу старто",
@@ -67,8 +64,7 @@ class CoursesFragment: AbstractFragment<FragmentCoursesBinding>(FragmentCoursesB
                 startDate = "2024-04-15",
                 hasLike = false,
                 publishDate = "2024-01-13"
-            ),
-            Course(
+            ), Course(
                 id = 104,
                 title = "Аналитик данных",
                 text = "В этом уроке вы узнаете, кто такой аналитик данных и какие задачи он решает. А главное — мы расска",

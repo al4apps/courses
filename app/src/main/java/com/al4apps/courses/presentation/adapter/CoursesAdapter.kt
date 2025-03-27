@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.al4apps.courses.R
 import com.al4apps.courses.databinding.CardCourseBinding
-import com.al4apps.courses.domain.Course
+import com.al4apps.domain.models.Course
 import com.bumptech.glide.Glide
 
 class CoursesAdapter(
@@ -46,7 +46,6 @@ class CourseViewHolder(
             binding.root.setOnClickListener {
                 onClick(course.id)
             }
-
             courseTitleTextView.text = course.title
             courseDescriptionTextView.text = course.text
             coursePriceTextView.text =
