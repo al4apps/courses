@@ -16,4 +16,5 @@
     <string name="content_description_password_input_layout">Поле для ввода пароля</string>
     <string name="email_input_hint">example@gmail.com</string>
     <string name="password_input_hint">Введите пароль</string>
+    <string name="search_courses_text_field_hint">Search courses...</string>
 </resources>

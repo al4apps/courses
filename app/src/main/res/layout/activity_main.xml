@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <androidx.fragment.app.FragmentContainerView
-        android:name="com.al4apps.courses.presentation.LoginFragment"
+        android:name="com.al4apps.courses.presentation.CoursesFragment"
         android:id="@+id/fragmentContainerView"
         android:layout_width="0dp"
         android:layout_height="0dp"

@@ -26,7 +26,7 @@
         <item name="fontWeight">500</item>
     </style>
 
-    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+    <style name="TextInputLayoutStyle" parent="Widget.Material3.TextInputLayout.OutlinedBox">
         <item name="boxStrokeColor">@color/light_grey</item>
         <item name="boxBackgroundColor">@color/light_grey</item>
         <item name="boxCornerRadiusBottomEnd">@dimen/edit_text_radius</item>
@@ -37,8 +37,25 @@
         <item name="hintEnabled">false</item>
     </style>
 
-    <style name="AndroidBodyMedium" parent="TextAppearance.Material3.BodyMedium">
+    <style name="SearchInputLayoutStyle" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/dark_grey</item>
+        <item name="boxBackgroundColor">@color/dark_grey</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/edit_text_radius</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/edit_text_radius</item>
+        <item name="boxCornerRadiusTopStart">@dimen/edit_text_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/edit_text_radius</item>
+        <item name="android:maxLines">1</item>
+        <item name="hintEnabled">false</item>
+    </style>
+
+    <style name="AndroidBodyMedium14" parent="TextAppearance.Material3.BodyMedium">
         <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="fontWeight">400</item>
+    </style>
+
+    <style name="AndroidBodyMedium18" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textSize">18sp</item>
         <item name="fontFamily">@font/roboto_regular</item>
         <item name="fontWeight">400</item>
     </style>
@@ -48,4 +65,12 @@
         <item name="fontFamily">@font/roboto_medium</item>
         <item name="fontWeight">600</item>
     </style>
+
+    <style name="AndroidBodySmall12" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:textSize">12sp</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="fontWeight">400</item>
+    </style>
+
+
 </resources>
