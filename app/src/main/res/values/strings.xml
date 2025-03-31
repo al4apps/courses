@@ -21,6 +21,7 @@
     <string name="search_courses_text_field_hint">Search courses…</string>
     <string name="course_price_text">%s ₽</string>
     <string name="course_card_to_detail_text">Подробнее</string>
+    <string name="sort_type_date_text">По дате добавления</string>
 
     <string name="menu_home_title">Главная</string>
     <string name="menu_favorite_title">Избранное</string>
@@ -43,5 +44,7 @@
     <string name="month_october">Октября</string>
     <string name="month_november">Ноября</string>
     <string name="month_december">Декабря</string>
-    <string name="sort_type_date_text">По дате добавления</string>
+    <string name="date_with_month">%d %s %d</string>
+
+
 </resources>

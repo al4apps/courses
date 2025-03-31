@@ -9,6 +9,8 @@
     <color name="green_pressed_button">#1B8A48</color>
     <color name="green_button_ripple">#C512B956</color>
     <color name="stroke_color">#4D555E</color>
-    <color name="background_blur">#32333A4D</color>
+    <!--    <color name="background_blur">#32333A4D</color>-->
+    <!--    Изменена прозрачность для улучшения читабельности -->
+    <color name="background_blur">#70333A4D</color>
 
 </resources>

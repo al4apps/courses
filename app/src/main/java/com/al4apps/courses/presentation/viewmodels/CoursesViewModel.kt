@@ -1,8 +1,8 @@
 package com.al4apps.courses.presentation.viewmodels
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.al4apps.courses.utils.CustomDateFormatter
 import com.al4apps.domain.models.Course
 import com.al4apps.domain.usecases.LoadCoursesUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -11,7 +11,8 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class CoursesViewModel(
-    private val loadCoursesUseCase: LoadCoursesUseCase
+    private val loadCoursesUseCase: LoadCoursesUseCase,
+    private val customDateFormatter: CustomDateFormatter
 ) : ViewModel() {
 
     private val _sortType = MutableStateFlow(SortType.DATE_ASC)
@@ -29,6 +30,8 @@ class CoursesViewModel(
                 _loadState.value = LoadState.Loading
                 val courses = loadCoursesUseCase()
                     .sortByPublishDate()
+                    .map { it.reformatStartDate() }
+
                 _loadState.value = LoadState.Success(courses)
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -45,9 +48,7 @@ class CoursesViewModel(
         }
         val state = _loadState.value
         if (state is LoadState.Success) {
-            Log.d("AAA", "changeSortType: ${_sortType.value}")
             val sortedCourses = (_loadState.value as LoadState.Success).courses.sortByPublishDate()
-            Log.d("AAA", "changeSortType: ${sortedCourses.map { it.publishDate }}")
             _loadState.value = LoadState.Success(sortedCourses)
         }
     }
@@ -60,6 +61,16 @@ class CoursesViewModel(
         }
     }
 
+    private fun Course.reformatStartDate(): Course {
+        try {
+            return this.copy(startDate = customDateFormatter.getFormattedDate(this.startDate))
+        } catch (e: Exception) {
+            e.printStackTrace()
+            return this
+        }
+    }
+
+
 }
 
 enum class SortType {
@@ -71,3 +82,9 @@ sealed class LoadState {
     data class Success(val courses: List<Course>) : LoadState()
     data object Error : LoadState()
 }
+
+data class CustomDate(
+    val day: Int,
+    val month: Int,
+    val year: Int
+)
