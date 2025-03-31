@@ -43,7 +43,7 @@ class CourseViewHolder(
 
     fun bind(course: Course) {
         with(binding) {
-            binding.root.setOnClickListener {
+            binding.detailInfoTextView.setOnClickListener {
                 onClick(course.id)
             }
             courseTitleTextView.text = course.title
@@ -57,6 +57,7 @@ class CourseViewHolder(
             } else {
                 markImageView.setImageResource(R.drawable.mark)
             }
+            // Api не предоставляет image url
             Glide.with(itemView)
                 .load(R.drawable.course_image)
                 .into(mainImageView)

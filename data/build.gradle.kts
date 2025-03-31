@@ -40,4 +40,6 @@ dependencies {
 
     implementation(libs.androidx.datastore.preferences)
     implementation(libs.koin.android)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
 }

@@ -27,4 +27,6 @@
     <string name="menu_profile_title">Аккаунт</string>
     <string name="profile_screen_title">Аккаунт</string>
     <string name="favorite_screen_title">Избранное</string>
+    <string name="toast_load_error_text">Ошибка загрузки</string>
+    <string name="toast_course_id_text">Id курса: %d</string>
 </resources>
