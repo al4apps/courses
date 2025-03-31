@@ -1,24 +1,37 @@
 package com.al4apps.courses.presentation.viewmodels
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.al4apps.domain.models.LaunchState
 import com.al4apps.domain.usecases.LaunchStateUseCase
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.launch
 
 class StartViewModel(
     private val launchStateUseCase: LaunchStateUseCase,
 ) : ViewModel() {
 
-    private val _launchState = MutableLiveData<LaunchState>()
-    val launchState: LiveData<LaunchState> get() = _launchState
+    val launchState = launchStateUseCase.getLaunchState()
+        .catch {
+            it.printStackTrace()
+            this.emit(LaunchState.FIRST_START)
+        }
 
-    init {
-        _launchState.value = launchStateUseCase.getLaunchState()
+    fun onOnboardingShowed() {
+        setLaunchState(LaunchState.UNAUTHORIZED)
     }
 
+    fun onAuthorized() {
+        setLaunchState(LaunchState.AUTHORIZED)
+    }
 
-    fun setLaunchState(launchState: LaunchState) {
-        launchStateUseCase.setLaunchState(launchState)
+    private fun setLaunchState(launchState: LaunchState) {
+        viewModelScope.launch {
+            try {
+                launchStateUseCase.setLaunchState(launchState)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
     }
 }
