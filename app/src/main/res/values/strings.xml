@@ -18,7 +18,13 @@
     <string name="password_input_hint">Введите пароль</string>
 
     <!--    Курсы -->
-    <string name="search_courses_text_field_hint">Search courses...</string>
+    <string name="search_courses_text_field_hint">Search courses…</string>
     <string name="course_price_text">%s ₽</string>
     <string name="course_card_to_detail_text">Подробнее</string>
+
+    <string name="menu_home_title">Главная</string>
+    <string name="menu_favorite_title">Избранное</string>
+    <string name="menu_profile_title">Аккаунт</string>
+    <string name="profile_screen_title">Аккаунт</string>
+    <string name="favorite_screen_title">Избранное</string>
 </resources>

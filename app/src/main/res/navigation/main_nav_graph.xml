@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.al4apps.courses.presentation.CoursesFragment"
+        android:label="CoursesFragment" />
+    <fragment
+        android:id="@+id/favorite"
+        android:name="com.al4apps.courses.presentation.FavoriteFragment"
+        android:label="FavoriteFragment" />
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.al4apps.courses.presentation.ProfileFragment"
+        android:label="ProfileFragment" />
+</navigation>

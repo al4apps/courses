@@ -13,21 +13,27 @@
         android:name="com.al4apps.courses.presentation.LoginFragment"
         android:label="LoginFragment" />
     <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.al4apps.courses.presentation.MainFragment"
+        android:label="MainFragment" />
+    <fragment
         android:id="@+id/splashFragment"
         android:name="com.al4apps.courses.presentation.SplashFragment"
         android:label="SplashFragment" >
         <action
             android:id="@+id/action_splashFragment_to_onboardingFragment"
-            app:destination="@id/onboardingFragment" />
-        <action
-            android:id="@+id/action_splashFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/onboardingFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_splashFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
     </fragment>
-    <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.al4apps.courses.presentation.MainFragment"
-        android:label="MainFragment" />
 </navigation>

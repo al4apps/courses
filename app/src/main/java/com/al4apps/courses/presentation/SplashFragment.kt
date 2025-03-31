@@ -5,26 +5,37 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.al4apps.courses.R
+import com.al4apps.domain.models.LaunchState
 
-class SplashFragment: Fragment() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
+class SplashFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        if (false) {
-            findNavController().navigate(R.id.action_splashFragment_to_onboardingFragment)
-        } else {
-            findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
+        val state = listOf(
+            LaunchState.UNAUTHORIZED,
+            LaunchState.AUTHORIZED,
+            LaunchState.FIRST_START
+        ).random()
+        navigateOnAppStart(state)
+        return null
+    }
+
+    private fun navigateOnAppStart(launchState: LaunchState) {
+        val navOptions = NavOptions.Builder()
+            .setPopUpTo(R.id.splashFragment, true, saveState = false)
+            .build()
+
+        val destinationId = when (launchState) {
+            LaunchState.FIRST_START -> R.id.onboardingFragment
+            LaunchState.UNAUTHORIZED -> R.id.loginFragment
+            LaunchState.AUTHORIZED -> R.id.mainFragment
         }
-        return super.onCreateView(inflater, container, savedInstanceState)
+        findNavController().navigate(resId = destinationId, args = null, navOptions = navOptions)
     }
 }
