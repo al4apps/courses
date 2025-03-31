@@ -29,4 +29,19 @@
     <string name="favorite_screen_title">Избранное</string>
     <string name="toast_load_error_text">Ошибка загрузки</string>
     <string name="toast_course_id_text">Id курса: %d</string>
+
+    <!--    Месяцы -->
+    <string name="month_january">Января</string>
+    <string name="month_february">Февраля</string>
+    <string name="month_march">Марта</string>
+    <string name="month_april">Апреля</string>
+    <string name="month_may">Мая</string>
+    <string name="month_june">Июня</string>
+    <string name="month_july">Июля</string>
+    <string name="month_august">Августа</string>
+    <string name="month_september">Сентября</string>
+    <string name="month_october">Октября</string>
+    <string name="month_november">Ноября</string>
+    <string name="month_december">Декабря</string>
+    <string name="sort_type_date_text">По дате добавления</string>
 </resources>

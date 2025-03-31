@@ -65,14 +65,17 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/margin_medium"
         android:layout_marginTop="@dimen/margin_medium"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchBarContainer">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/forgotPasswordTextView"
+            android:id="@+id/sortTypeTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="По дате добавления"
+            android:text="@string/sort_type_date_text"
             android:textAlignment="center"
             android:textAppearance="@style/AndroidButtonSmall"
             android:textColor="@color/green" />

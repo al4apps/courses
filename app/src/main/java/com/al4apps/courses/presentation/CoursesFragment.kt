@@ -3,6 +3,9 @@ package com.al4apps.courses.presentation
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import com.al4apps.courses.R
 import com.al4apps.courses.databinding.FragmentCoursesBinding
 import com.al4apps.courses.presentation.adapter.CoursesAdapter
@@ -10,6 +13,7 @@ import com.al4apps.courses.presentation.viewmodels.CoursesViewModel
 import com.al4apps.courses.presentation.viewmodels.LoadState
 import com.al4apps.courses.utils.AbstractFragment
 import com.al4apps.courses.utils.autoCleared
+import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CoursesFragment : AbstractFragment<FragmentCoursesBinding>(FragmentCoursesBinding::inflate) {
@@ -20,8 +24,19 @@ class CoursesFragment : AbstractFragment<FragmentCoursesBinding>(FragmentCourses
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initAdapter()
-        viewModel.loadState.observe(viewLifecycleOwner) {
-            onLoadStateChanged(it)
+        initObservers()
+        binding.sortTypeContainer.setOnClickListener {
+            viewModel.changeSortType()
+        }
+    }
+
+    private fun initObservers() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.loadState.collect {
+                    onLoadStateChanged(it)
+                }
+            }
         }
     }
 

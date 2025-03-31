@@ -24,11 +24,11 @@ data class CourseDto(
     val price: String?,
     @SerializedName("rate")
     val rate: String?,
-    @SerializedName("start_date")
+    @SerializedName("startDate")
     val startDate: String?,
-    @SerializedName("has_like")
+    @SerializedName("hasLike")
     val hasLike: Boolean?,
-    @SerializedName("publish_date")
+    @SerializedName("publishDate")
     val publishDate: String?
 ) {
     fun toCourse(): Course {
