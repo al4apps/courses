@@ -7,6 +7,12 @@
         <item name="fontWeight">400</item>
     </style>
 
+    <style name="AndroidTitleLarge22" parent="TextAppearance.Material3.TitleMedium">
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">22sp</item>
+        <item name="fontWeight">400</item>
+    </style>
+
     <style name="AndroidTitleMedium" parent="TextAppearance.Material3.TitleMedium">
         <item name="fontFamily">@font/roboto_regular</item>
         <item name="android:textSize">16sp</item>

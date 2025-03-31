@@ -11,13 +11,14 @@ import com.al4apps.domain.models.Course
 import com.bumptech.glide.Glide
 
 class CoursesAdapter(
-    private val onClick: (id: Int) -> Unit
+    private val onClick: (id: Int) -> Unit,
+    private val onMarkClick: (id: Int) -> Unit,
 ) : ListAdapter<Course, CourseViewHolder>(CoursesDiffUtil()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CourseViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding = CardCourseBinding.inflate(layoutInflater, parent, false)
-        return CourseViewHolder(binding, onClick)
+        return CourseViewHolder(binding, onClick, onMarkClick)
     }
 
     override fun onBindViewHolder(holder: CourseViewHolder, position: Int) {
@@ -38,13 +39,17 @@ class CoursesAdapter(
 
 class CourseViewHolder(
     private val binding: CardCourseBinding,
-    private val onClick: (id: Int) -> Unit
+    private val onClick: (id: Int) -> Unit,
+    private val onMarkClick: (id: Int) -> Unit,
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(course: Course) {
         with(binding) {
-            binding.detailInfoTextView.setOnClickListener {
+            detailInfoTextView.setOnClickListener {
                 onClick(course.id)
+            }
+            markCardView.setOnClickListener {
+                onMarkClick(course.id)
             }
             courseTitleTextView.text = course.title
             courseDescriptionTextView.text = course.text

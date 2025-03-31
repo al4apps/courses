@@ -18,7 +18,6 @@ class LaunchStateRepositoryImpl(
     override fun getLaunchState(): Flow<LaunchState> {
         return dataStore.data.map {
             val stateNumber = it[LAUNCH_STATE_PREFS_KEY]
-            Log.d("LaunchStateRepositoryImpl", "getLaunchState: $stateNumber")
             LaunchState.fromPrefNumber(stateNumber)
         }
     }

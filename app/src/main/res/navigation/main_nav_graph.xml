@@ -10,7 +10,7 @@
         android:label="CoursesFragment" />
     <fragment
         android:id="@+id/favorite"
-        android:name="com.al4apps.courses.presentation.FavoriteFragment"
+        android:name="com.al4apps.courses.presentation.FavoritesFragment"
         android:label="FavoriteFragment" />
     <fragment
         android:id="@+id/profile"

@@ -45,6 +45,7 @@
                 android:layout_width="@dimen/course_card_mark_card_size"
                 android:layout_height="@dimen/course_card_mark_card_size"
                 android:backgroundTint="@color/background_blur"
+                android:background="?attr/selectableItemBackground"
                 app:cardCornerRadius="@dimen/course_card_mark_card_radius"
                 android:layout_marginTop="@dimen/margin_small"
                 android:layout_marginEnd="@dimen/margin_small"

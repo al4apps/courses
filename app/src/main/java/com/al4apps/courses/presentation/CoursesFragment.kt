@@ -60,13 +60,16 @@ class CoursesFragment : AbstractFragment<FragmentCoursesBinding>(FragmentCourses
     }
 
     private fun initAdapter() {
-        coursesAdapter = CoursesAdapter {
-            Toast.makeText(
-                requireContext(),
-                getString(R.string.toast_course_id_text, it),
-                Toast.LENGTH_SHORT
-            ).show()
-        }
+        coursesAdapter = CoursesAdapter(
+            onClick = {
+                Toast.makeText(
+                    requireContext(),
+                    getString(R.string.toast_course_id_text, it),
+                    Toast.LENGTH_SHORT
+                ).show()
+            },
+            onMarkClick = { viewModel.onLikeCourseClick(it) }
+        )
         binding.coursesRecyclerView.adapter = coursesAdapter
     }
 }

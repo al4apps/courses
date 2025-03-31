@@ -4,9 +4,14 @@ import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
+import androidx.room.Room
 import com.al4apps.data.CoursesApi
+import com.al4apps.data.db.AppDatabase
+import com.al4apps.data.db.CoursesDao
+import com.al4apps.data.repositories.CoursesInDbRepositoryImpl
 import com.al4apps.data.repositories.CoursesRepositoryImpl
 import com.al4apps.data.repositories.LaunchStateRepositoryImpl
+import com.al4apps.domain.repositories.CoursesInDbRepository
 import com.al4apps.domain.repositories.CoursesRepository
 import com.al4apps.domain.repositories.LaunchStateRepository
 import okhttp3.OkHttpClient
@@ -20,8 +25,9 @@ val Context.dataStore by preferencesDataStore(name = PREFS_DATA_STORE)
 
 val dataModule = module {
     single<DataStore<Preferences>> { get<Context>().dataStore }
-    single <LaunchStateRepository> { LaunchStateRepositoryImpl(dataStore = get()) }
+    single<LaunchStateRepository> { LaunchStateRepositoryImpl(dataStore = get()) }
     single<CoursesRepository> { CoursesRepositoryImpl(coursesApi = get()) }
+    single<CoursesInDbRepository> { CoursesInDbRepositoryImpl(coursesDao = get()) }
 
     single<CoursesApi> {
         val baseUrl = "https://drive.usercontent.google.com/"
@@ -35,4 +41,14 @@ val dataModule = module {
 
         retrofit.create<CoursesApi>()
     }
+
+    single<AppDatabase> {
+        Room.databaseBuilder(
+            get<Context>(),
+            AppDatabase::class.java,
+            AppDatabase.DB_NAME
+        ).build()
+    }
+
+    single<CoursesDao> { get<AppDatabase>().coursesDao() }
 }

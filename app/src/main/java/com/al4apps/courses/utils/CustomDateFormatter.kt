@@ -2,13 +2,17 @@ package com.al4apps.courses.utils
 
 import android.content.Context
 import com.al4apps.courses.R
-import com.al4apps.courses.presentation.viewmodels.CustomDate
 
 class CustomDateFormatter(private val context: Context) {
     fun getFormattedDate(date: String): String {
         val customDate = getCustomDate(date)
         val monthName = getMonthName(customDate.month)
-        return context.getString(R.string.date_with_month, customDate.day, monthName, customDate.year)
+        return context.getString(
+            R.string.date_with_month,
+            customDate.day,
+            monthName,
+            customDate.year
+        )
     }
 
     private fun getMonthName(month: Int): String {
@@ -37,3 +41,9 @@ class CustomDateFormatter(private val context: Context) {
         return CustomDate(day.toInt(), month.toInt(), year.toInt())
     }
 }
+
+data class CustomDate(
+    val day: Int,
+    val month: Int,
+    val year: Int
+)
